@@ -45,3 +45,12 @@ group :development do
   gem 'spring'
 end
 
+#Devise for users authentication
+gem 'devise', '~> 4.4', '>= 4.4.3'
+
+#Bootstrap 
+gem 'bootstrap', '~> 4.1.1'
+
+#Sprokets
+gem 'sprockets-rails', '~> 3.0', '>= 3.0.4'
+

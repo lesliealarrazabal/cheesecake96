@@ -1,0 +1,38 @@
+<html>
+<body>
+<h1> Welcome to the site person who is logged in </h1>
+
+<p>Usuarios</p>
+
+
+<% @user.each do |c| %>
+    <tr>
+      <td><%= c.id %></td>
+      <td><%= c.email %></td>       
+      <td><%= c.role_id %></td>
+
+      <% @id = c.role_id %>
+      <% if @id != nil %>
+      <% @rolex = Role.find_by(:id => @id) %>
+      <td><p>Membership : <%= @rolex.name %></p></td><br> 
+      <% else %>
+      <td><p>Membership: no hay</p></td><br> 
+      <% end %>     
+
+    </tr>
+<% end %>
+
+<h3>Current user Membership : <%= $name_r %> </h3>
+
+
+
+
+<%= link_to "crear carritos", carritos_path %>
+
+
+
+
+
+</body>
+
+</html>
