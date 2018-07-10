@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.7'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+#Bootstrap 
+gem 'bootstrap', '~> 4.1.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,9 +49,6 @@ end
 
 #Devise for users authentication
 gem 'devise', '~> 4.4', '>= 4.4.3'
-
-#Bootstrap 
-gem 'bootstrap', '~> 4.1.1'
 
 #Sprokets
 gem 'sprockets-rails', '~> 3.0', '>= 3.0.4'

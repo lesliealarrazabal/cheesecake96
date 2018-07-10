@@ -1,6 +1,8 @@
 <html>
 <body>
-<h1> Welcome to the site person who is logged in </h1>
+
+
+<h1> Welcome to the site <%= current_user.first_name%> </h1>
 
 <p>Usuarios</p>
 
@@ -23,13 +25,8 @@
 <% end %>
 
 <h3>Current user Membership : <%= $name_r %> </h3>
-
-
-
-
-<%= link_to "crear carritos", carritos_path %>
-
-
+<%= link_to("Show all projects",projects_path)%> <br>
+<%= link_to("Show all providers",providers_path)%>
 
 
 

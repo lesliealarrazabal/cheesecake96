@@ -1,0 +1,12 @@
+<%= form_for(@provider, :method => 'delete') do |f| %>
+    
+    <h1>Are you sure?</h1>
+    <h4> You area about to delete the record </h4>
+    <h4><strong><%= @provider.name %></strong><h4>
+    <div class="form-buttons">
+        <%= f.submit("Delete Provider")%>
+    <div>
+
+<% end %>
+
+

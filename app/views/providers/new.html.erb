@@ -1,0 +1,16 @@
+<h1> CREATE PROVIDER </h1>
+<%= form_for(@provider) do |f| %>
+<table summary='Project form field'>
+<tr>
+    <th>Name</th>
+    <td><%= f.text_area(:name)%></td>
+</tr>
+<tr>
+  <td>
+    <div class="form-buttons">
+      <%= f.submit('Create provider') %>
+    </div>
+  </td>
+</tr>
+</table>
+<% end %>
