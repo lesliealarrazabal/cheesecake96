@@ -1,0 +1,11 @@
+<% if !flash[:notice].blank? %>
+<div class="notice">
+<%= flash[:notice]%>
+</div>
+<%end%>
+
+<h1>SHOW PROVIDERS</h1>
+<ul>
+<li>Id : <%= @provider.id%></li>
+<li>Name : <%= @provider.name%></li>
+</ul>

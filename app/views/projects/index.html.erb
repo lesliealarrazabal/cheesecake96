@@ -1,0 +1,40 @@
+<% if !flash[:notice].blank? %>
+<div class="notice">
+<%= flash[:notice]%>
+</div>
+<%end%>
+
+<h1>Projects#index</h1>
+
+<div>
+<table>
+<%= link_to 'NEW PROJECT', new_project_path %>
+
+<tr>
+ <th>Name</th>
+ <th>Description</th>
+ <th>Sent at</th>
+ <th>Created at</th>
+ <th>Updated at</th>
+ <th>Users ID (FK)</th>
+ <th>Numero de colabs</th>
+</tr>
+<% @projects.each do |project| %>
+<tr>
+<td><%= project.name %></td>
+<td><%= project.description %></td>
+<td><%= project.sent_at ? 'Yes' : 'No' %></td>
+<td><%= project.created_at %></td>
+<td><%= project.updated_at %></td>
+<td><%= project.user_id %></td>
+<td><%= project.providers.size %></td>
+<td>
+<%= link_to 'Show', project_path(project) %>
+<%= link_to 'Edit', edit_project_path(project) %>
+<%= link_to 'Delete', delete_project_path(project) %>
+</td>
+</tr>
+<% end %>
+
+</table>
+</div>

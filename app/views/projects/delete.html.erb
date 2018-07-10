@@ -1,0 +1,11 @@
+<%= form_for(@project, :method => 'delete') do |f| %>
+    
+    <h1>Are you sure?</h1>
+    <h4> You area about to delete the record </h4>
+    <h4><strong><%= @project.name %></strong><h4>
+    <div class="form-buttons">
+        <%= f.submit("Delete Project")%>
+    <div>
+
+<% end %>
+

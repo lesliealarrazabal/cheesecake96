@@ -1,0 +1,19 @@
+<html>
+<body>
+<% if !flash[:notice].blank? %>
+<div class="notice">
+<%= flash[:notice]%>
+</div>
+<%end%>
+ <h2>PROJECT : <%= @project.name%> </h2>
+    <ul>
+    <li>Name : <%= @project.name%></li>
+    <li>Description : <%= @project.description%></li>
+    <li>Sent : <%= @project.sent_at ? 'Yes' : 'No' %> </li>
+    <li>Created at : <%= @project.created_at %></li>
+    <li>Updated at : <%= @project.updated_at %></li>
+    <li>Creator user : <%= @project.user_id %></li>
+    <li>Cantidad de Provedores : <%= @project.providers.size%> </li>
+    </ul>
+</body>
+</html>

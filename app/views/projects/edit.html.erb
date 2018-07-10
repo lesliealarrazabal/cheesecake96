@@ -1,0 +1,26 @@
+<h1>UPDATE A PROJECT</h1>
+<%= form_for(@project) do |f|%>
+    <table summary='Project form fields'>
+    <tr>
+     <th>Name : </th>
+     <td><%= f.text_field(:name)%></td>
+    </tr>
+    
+    <tr>
+    <th>Description : </th>
+    <td><%= f.text_area(:description)%></td>
+   </tr>
+
+   <%= f.number_field(:user_id, class: 'esconder')%>
+
+   <tr>
+   <td>
+   <div class="form-buttons">
+   <%= f.submit('Update project') %>
+   </div>
+   </td>
+   </tr>
+
+  
+    </table>
+<% end %>

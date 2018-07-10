@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :roles
   has_many :projects
+  has_and_belongs_to_many :providers
+
+  scope :search, lambda {|query| where(["id LIKE ?","%#{query}%"])}
 end

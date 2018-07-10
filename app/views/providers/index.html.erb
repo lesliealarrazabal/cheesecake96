@@ -1,0 +1,28 @@
+
+<% if !flash[:notice].blank? %>
+<div class="notice">
+<%= flash[:notice]%>
+</div>
+<%end%>
+
+<h1>Providers#index</h1>
+
+<%= link_to 'Create new provider' ,new_provider_path %>
+<br>
+<table>
+<tr>
+<th>ID</th>
+<th>Name</th>
+</tr>
+<% @providers.each do |provider|%>
+<tr>
+<td><%= provider.id%></td>
+<td><%= provider.name%></td>
+<td>
+<%= link_to 'Show', provider_path(provider) %>
+<%= link_to 'Edit', edit_provider_path(provider) %>
+<%= link_to 'Delete', delete_provider_path(provider) %>
+</td>
+<% end %>
+</tr>
+</table>
