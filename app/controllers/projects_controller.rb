@@ -6,10 +6,15 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    #Todos los proveedores que estan dados de alta en ese proyecto
+    @providers = @project.providers
   end
 
   def new
     @project = Project.new({:user_id => current_user.id})
+    #Todos los proveedores que estan dados de alta
+    @current_user =User.find(current_user.id)
+    @providers = @current_user.providers
   end
 
   def create
@@ -27,6 +32,9 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    #Todos los proveedores que estan dados de alta
+    @current_user =User.find(current_user.id)
+    @providers = @current_user.providers
   end
 
   def update
@@ -53,7 +61,7 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:name,:description,:sent_at,:user_id)
+    params.require(:project).permit(:name,:description,:sent_at,:user_id,{:provider_ids => []})
   end
 
 end

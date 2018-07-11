@@ -15,5 +15,16 @@
     <li>Creator user : <%= @project.user_id %></li>
     <li>Cantidad de Provedores : <%= @project.providers.size%> </li>
     </ul>
+    <BR>
+    <H4>PROVIDERS</H4>
+
+    <% @providers.each  do |b|%>
+        <ul>
+        <li>
+            <p><strong>ID : </strong><%= b.id %> <strong> Name : </strong><%= b.name%></p> 
+        </li> 
+        </ul>
+    <% end %>
+
 </body>
 </html>

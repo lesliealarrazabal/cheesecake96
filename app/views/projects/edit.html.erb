@@ -13,14 +13,17 @@
 
    <%= f.number_field(:user_id, class: 'esconder')%>
 
-   <tr>
-   <td>
+    
+    </table>
+
+    <% @providers.each do |provider| %>
+      <%= hidden_field_tag "project[provider_ids][]", nil%>
+      <%= check_box_tag 'project[provider_ids][]', provider.id , @project.provider_ids.include?(provider.id),id: dom_id(provider) %>
+      <%= label_tag dom_id(provider), provider.name%><br>
+    <% end %>
+ 
    <div class="form-buttons">
    <%= f.submit('Update project') %>
    </div>
-   </td>
-   </tr>
 
-  
-    </table>
 <% end %>
