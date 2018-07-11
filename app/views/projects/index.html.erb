@@ -11,6 +11,7 @@
 <%= link_to 'NEW PROJECT', new_project_path %>
 
 <tr>
+ <th>Id</th>
  <th>Name</th>
  <th>Description</th>
  <th>Sent at</th>
@@ -21,6 +22,7 @@
 </tr>
 <% @projects.each do |project| %>
 <tr>
+<td><%= project.id %></td>
 <td><%= project.name %></td>
 <td><%= project.description %></td>
 <td><%= project.sent_at ? 'Yes' : 'No' %></td>
