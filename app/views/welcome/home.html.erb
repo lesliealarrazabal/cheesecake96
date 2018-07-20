@@ -1,10 +1,11 @@
 <html>
 <body>
-
-
-<h1> Welcome to the site <%= current_user.first_name%> </h1>
-
-<p>Usuarios</p>
+<div class = 'content'>
+<div class='titles'>
+<h4> Welcome to the site <%= current_user.first_name%> </h4>
+<h6>Membership : <%= $name_r %> </h6>
+</div>
+<p>All users list</p>
 
 
 <% @user.each do |c| %>
@@ -24,12 +25,10 @@
     </tr>
 <% end %>
 
-<h3>Current user Membership : <%= $name_r %> </h3>
-<%= link_to("Show all projects",projects_path)%> <br>
-<%= link_to("Show all providers",providers_path)%>
 
 
 
+</div>
 </body>
 
 </html>

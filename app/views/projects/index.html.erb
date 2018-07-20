@@ -3,40 +3,41 @@
 <%= flash[:notice]%>
 </div>
 <%end%>
+<div class='content'>
+    <div class='titles'>
+    <h4>My templates</h4>
+    </div>
+    <div>
+    <table>
+        
+    <%= link_to 'NEW PROJECT', new_project_path , class:'btn btn-outline-info '%>
+    <tr>
+    
+    <th>Id</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Sent at</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+    <th>Users ID (FK)</th>
+    </tr>
+    <% @projects.each do |project| %>
+    <tr>
+    <td><%= project.id %></td>
+    <td><%= project.name %></td>
+    <td><%= project.description %></td>
+    <td><%= project.sent_at ? 'Yes' : 'No' %></td>
+    <td><%= project.created_at %></td>
+    <td><%= project.updated_at %></td>
+    <td><%= project.user_id %></td>    
+    <td>
+    <%= link_to 'Show', project_path(project) %>
+    <%= link_to 'Edit', edit_project_path(project) %>
+    <%= link_to 'Delete', delete_project_path(project) %>
+    </td>
+    </tr>
+    <% end %>
 
-<h1>Projects#index</h1>
-
-<div>
-<table>
-<%= link_to 'NEW PROJECT', new_project_path %>
-
-<tr>
- <th>Id</th>
- <th>Name</th>
- <th>Description</th>
- <th>Sent at</th>
- <th>Created at</th>
- <th>Updated at</th>
- <th>Users ID (FK)</th>
- <th>Numero de colabs</th>
-</tr>
-<% @projects.each do |project| %>
-<tr>
-<td><%= project.id %></td>
-<td><%= project.name %></td>
-<td><%= project.description %></td>
-<td><%= project.sent_at ? 'Yes' : 'No' %></td>
-<td><%= project.created_at %></td>
-<td><%= project.updated_at %></td>
-<td><%= project.user_id %></td>
-<td><%= project.providers.size %></td>
-<td>
-<%= link_to 'Show', project_path(project) %>
-<%= link_to 'Edit', edit_project_path(project) %>
-<%= link_to 'Delete', delete_project_path(project) %>
-</td>
-</tr>
-<% end %>
-
-</table>
+    </table>
+    </div>
 </div>

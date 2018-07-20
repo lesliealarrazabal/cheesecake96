@@ -1,0 +1,33 @@
+// Place all the styles related to the questions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.sis{    
+    width: 250px;
+}
+.content{
+    margin-left: 5%;
+    margin-top:1%;
+}
+.titles{
+    width: 100%;
+    text-align: center;
+}
+.hide_element{
+    display: none;
+    visibility: hidden;
+}
+
+div.polaroid {
+    width: 14%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img {width: 100%;}
+
+div.container {
+    text-align: center;
+    padding: 10px 20px;
+}
