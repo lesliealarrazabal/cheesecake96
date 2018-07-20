@@ -53,3 +53,15 @@ gem 'devise', '~> 4.4', '>= 4.4.3'
 #Sprokets
 gem 'sprockets-rails', '~> 3.0', '>= 3.0.4'
 
+#Simple form
+gem 'simple_form'
+
+#Cocoon
+gem 'cocoon'
+
+#Carrierwave
+gem 'carrierwave'
+
+
+#MiniMagick
+gem "mini_magick"

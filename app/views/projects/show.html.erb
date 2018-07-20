@@ -13,18 +13,13 @@
     <li>Created at : <%= @project.created_at %></li>
     <li>Updated at : <%= @project.updated_at %></li>
     <li>Creator user : <%= @project.user_id %></li>
-    <li>Cantidad de Provedores : <%= @project.providers.size%> </li>
     </ul>
-    <BR>
-    <H4>PROVIDERS</H4>
-
-    <% @providers.each  do |b|%>
-        <ul>
-        <li>
-            <p><strong>ID : </strong><%= b.id %> <strong> Name : </strong><%= b.name%></p> 
-        </li> 
-        </ul>
-    <% end %>
-
+    <div class='polaroid'>
+        <%= image_tag @project.cover.url  if @project.cover? %>
+        <div class='container'>
+        <p>Template : <%= @project.name%></p>
+    </div>
+    
+    
 </body>
 </html>

@@ -2,19 +2,21 @@ class ProjectsController < ApplicationController
   before_filter :authenticate_user!
   def index
     @projects = Project.where_user_id(current_user.id)
+    
   end
 
   def show
     @project = Project.find(params[:id])
     #Todos los proveedores que estan dados de alta en ese proyecto
-    @providers = @project.providers
+    
   end
 
   def new
     @project = Project.new({:user_id => current_user.id})
     #Todos los proveedores que estan dados de alta
     @current_user =User.find(current_user.id)
-    @providers = @current_user.providers
+    
+   
   end
 
   def create
@@ -34,11 +36,11 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     #Todos los proveedores que estan dados de alta
     @current_user =User.find(current_user.id)
-    @providers = @current_user.providers
+    
   end
 
   def update
-    @project = Project.find(params[:id])   
+    @project = Project.find(params[:id])  
 
     if @project.update_attributes(project_params)
       flash[:notice]="Project updated successfully."
@@ -59,9 +61,15 @@ class ProjectsController < ApplicationController
     redirect_to(projects_path)
   end
 
+
+
+
   private
   def project_params
-    params.require(:project).permit(:name,:description,:sent_at,:user_id,{:provider_ids => []})
+    params.require(:project).permit(:name,:description,:sent_at,:cover,:user_id,questions_attributes: [:id,:title,:_destroy])
   end
+
+ 
+
 
 end

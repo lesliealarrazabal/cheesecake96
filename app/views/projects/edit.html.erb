@@ -1,26 +1,35 @@
 <h1>UPDATE A PROJECT</h1>
-<%= form_for(@project) do |f|%>
+<%= simple_form_for @project do |f|%>
     <table summary='Project form fields'>
     <tr>
      <th>Name : </th>
-     <td><%= f.text_field(:name)%></td>
+     <td><%= f.input_field(:name)%></td>
     </tr>
     
     <tr>
     <th>Description : </th>
-    <td><%= f.text_area(:description)%></td>
+    <td><%= f.input_field(:description)%></td>
    </tr>
 
-   <%= f.number_field(:user_id, class: 'esconder')%>
+
+   <tr>
+   <th>Cover Image : </th>
+   <td><%= f.input_field :cover, :as => :file%></td>  
+  </tr>
+
+   <%= f.input_field(:user_id, class: 'esconder')%>
 
     
     </table>
 
-    <% @providers.each do |provider| %>
-      <%= hidden_field_tag "project[provider_ids][]", nil%>
-      <%= check_box_tag 'project[provider_ids][]', provider.id , @project.provider_ids.include?(provider.id),id: dom_id(provider) %>
-      <%= label_tag dom_id(provider), provider.name%><br>
-    <% end %>
+   <%= f.simple_fields_for :questions do |question|%>
+     <%= question.input :title%>
+   <% end %>
+    <div class='links'>
+    <%= link_to_add_association 'Add question', f ,:questions, class: "btn btn-outline-info"%>
+    </div>
+
+
  
    <div class="form-buttons">
    <%= f.submit('Update project') %>
